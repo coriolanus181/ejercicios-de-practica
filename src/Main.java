@@ -21,18 +21,18 @@ public class Main {
 
 
         if (imc <= 18.49) {
-            System.out.println("Imc \t" + imc + "peso bajo");
+            System.out.println("Imc \t" + imc + "\tpeso bajo");
 
         } else if (imc <= 24.99) {
-            System.out.println("Imc \t" + imc + "peso normal");
+            System.out.println("Imc \t" + imc + "\tpeso normal");
         } else if (imc <= 29.99) {
-            System.out.println("Imc\t" + imc + "sobrepeso");
+            System.out.println("Imc\t" + imc + "\tsobrepeso");
         } else if (imc <= 34.99) {
-            System.out.println("Imc \t" + imc + "obesidad leve");
+            System.out.println("Imc \t" + imc + "\tobesidad leve");
         } else if (imc <= 39.99) {
-            System.out.println("Imc \t" + imc + "obesidad media");
+            System.out.println("Imc \t" + imc + "\tobesidad media");
         } else {
-            System.out.println("Imc \t" + imc + "Obesisdad morbida");
+            System.out.println("Imc \t" + imc + "\tObesisdad morbida");
         }
 
     }
