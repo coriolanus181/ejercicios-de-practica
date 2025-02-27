@@ -5,25 +5,18 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        int OpBicicleta = 3;
 
 
-        String Electrodomestico = "Lavadora";
+        String marcaBici =switch (OpBicicleta){
+            case 1 -> "Scott";
+            case 2 ->"Cannondate";
+            case 3 ->"Specialized";
+            default -> "No es tu bicicleta" ;
 
-        switch (Electrodomestico.toLowerCase()) {
-            case "Nevera":
-                Electrodomestico = "Nevera";
-                break;
-            case "Televisor":
-                Electrodomestico = "Televisor";
-                break;
-            case "lavadora":
-                Electrodomestico = "Lavadora";
-                break;
+        };
+        System.out.println("tu bicicleta es \t"+marcaBici);
 
-            default:
-                Electrodomestico = "No es tu electrodomestico";
-        }
-        System.out.println("Tu electrodomestico es\t" + Electrodomestico);
 
     }
 }
