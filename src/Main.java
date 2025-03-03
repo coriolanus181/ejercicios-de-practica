@@ -8,24 +8,63 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
 
-        int n1, n2;
-        double raiz1, raiz2;
+        int max = 3;
+        int min = 1;
+        int dinero;
+        int numAle;
+        int opc;
+        boolean estado=true;
 
+        System.out.println("Ingrese su  Dinero");
+        dinero = teclado.nextInt();
         do {
-            System.out.println("ingrese un valor de n1");
-            n1 = teclado.nextInt();
-        } while (n1 <= 0);
+            Random ale = new Random();
+            numAle = ale.nextInt(max - min + 1) + min;
+            System.out.println(numAle);
 
-        do {
-            System.out.println("ingrese un valor de n2");
-            n2 = teclado.nextInt();
-        } while (n2 <= 0);
+            if (numAle == 1) {
+                System.out.println("Has ganado x2");
+                dinero *= 2;
+                System.out.println("tu dinero es\t"+dinero );
+                System.out.println("Deseas seguir jugando : 1.Si 2.No");
+                opc= teclado.nextInt();
+                if (opc==1){
+                    numAle = ale.nextInt(max - min + 1) + min;
+                    System.out.println(numAle);
+                    continue;
 
-        raiz1 = Math.sqrt(n1);
-        raiz2 = Math.sqrt(n2);
+                    //System.out.println("1. SI");
+                }else if(opc==2){
+                    estado=false;
+                    //System.out.println("2. NO");
+                    System.out.println("tu dinero es"+dinero);
+                }
+            } else if (numAle == 2) {
+                System.out.println("pierdes la mitad");
+                dinero /= 2;
+                System.out.println("tu dinero es \t"+dinero );
+                System.out.println("Deseas seguir jugando : 1.Si 2.No");
 
-        System.out.println("la raiz de na es" + raiz1);
-        System.out.println("la raiz de na es" + raiz2);
+                opc= teclado.nextInt();
+                if (opc==1){
+                    numAle = ale.nextInt(max - min + 1) + min;
+                    System.out.println(numAle);
+                    continue;
+
+                    //System.out.println("1. SI");
+                }else if(opc==2){
+                    estado=false;
+                    //System.out.println("2. NO");
+                    System.out.println("tu dinero es\t"+dinero);
+                }
+            } else if (numAle == 3) {
+                System.out.println("pierdes todo");
+                dinero -= dinero;
+                estado= false;
+            }
+
+        } while (estado);
+
 
 
     }
