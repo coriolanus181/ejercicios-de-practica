@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Scanner teclado =new Scanner(System.in);
+      /*  Scanner teclado =new Scanner(System.in);
         int num;
         int min= 1;
         int max =100;
@@ -30,11 +30,41 @@ public class Main {
                 num = teclado.nextInt();
             }
         }while(num != numAle);
-        System.out.println("--------Winner----------");
+        System.out.println("--------Winner----------");*/
+
+// numeros pares
+        /*
+        for(int i=1;i<101;i++){
+            if(i%2==0){
+                System.out.println(i+"\t El número es par ");
+            }else{
+                System.out.println(i+"\t El número es impar ");
+            }
+
+        }*/
 
 
+        // número primo
+
+
+        for (int i=1;i<=4;i++){
+            int cont=0;
+        for (int j = 1; j <= i; j++) {
+            if (i % j == 0) {
+                cont++;
+            }
+
+
+        }
+            if (cont > 2) {
+                System.out.println(i+"el numero no es primo");
+            } else {
+                System.out.println(i+"el número es primo");
+            }
+
+
+        }
     }
-
 }
 
 
