@@ -6,26 +6,31 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
 
-        int n1, n2;
-        double raiz1, raiz2;
-
+        Scanner teclado =new Scanner(System.in);
+        int num;
+        int min= 1;
+        int max =100;
+        Random ale = new Random();
+        int numAle = ale.nextInt(max - min + 1) + min;
+        System.out.println(numAle);
+            System.out.println("ingrese un número entre el uno y el 100");
+            num = teclado.nextInt();
         do {
-            System.out.println("ingrese un valor de n1");
-            n1 = teclado.nextInt();
-        } while (n1 <= 0);
 
-        do {
-            System.out.println("ingrese un valor de n2");
-            n2 = teclado.nextInt();
-        } while (n2 <= 0);
+                //System.out.println("--------Winner----------");
+ if (numAle > num) {
+                System.out.println("El número es mayor que el ingresado ");
+                System.out.println("por favor ingrese nuevamente un numero");
+                num = teclado.nextInt();
 
-        raiz1 = Math.sqrt(n1);
-        raiz2 = Math.sqrt(n2);
-
-        System.out.println("la raiz de na es" + raiz1);
-        System.out.println("la raiz de na es" + raiz2);
+            } else if (num > numAle) {
+                System.out.println("El numero es menor que el ingresado");
+                System.out.println("por favor ingrese nuevamente un numero");
+                num = teclado.nextInt();
+            }
+        }while(num != numAle);
+        System.out.println("--------Winner----------");
 
 
     }
