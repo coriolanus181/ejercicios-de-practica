@@ -47,7 +47,7 @@ public class Main {
         // número primo
 
 
-        for (int i=1;i<=4;i++){
+     /*   for (int i=1;i<=4;i++){
             int cont=0;
         for (int j = 1; j <= i; j++) {
             if (i % j == 0) {
@@ -63,7 +63,65 @@ public class Main {
             }
 
 
+        }*/
+        Scanner teclado =new Scanner(System.in);
+        int min=1;
+        int max=100;
+        int  opc = 0;
+        int sum,res,mul,mod,pot;
+        double div;
+        int volver;
+        boolean continuar=true;
+        Random ale =new Random();
+        int numAle1 = ale.nextInt(max - min + 1) + min;
+        int numAle2 = ale.nextInt(max - min + 1) + min;
+        System.out.println("primer número "+numAle1);
+        System.out.println("segundo número "+numAle2);
+do {
+        System.out.println("Elija la operación que desea hacer");
+        System.out.println("1.+ 2.- 3.x 4./ 5.^ 6.% ");
+        opc = teclado.nextInt();
+     switch (opc){
+         case 1 :
+                sum=numAle1+numAle2;
+                System.out.println("el resultado de la opración \t"+sum);
+            break;
+         case 2 : res=numAle1-numAle2;
+             System.out.println("el resultado de la opración \t"+res);
+            break;
+         case 3 :mul=numAle1*numAle2;
+             System.out.println("el resultado de la opración \t"+mul);
+            break;
+         case 4:
+            div=(double)numAle1/numAle2;
+             System.out.println("el resultado de la opración \t"+div);
+             break;
+         case 5:
+             pot= (int) Math.pow(numAle1,numAle2);
+             System.out.println("el resultado de la opración \t"+pot);
+             break;
+         case 6:
+            mod= numAle1&numAle2;
+             System.out.println("el resultado de la opración \t"+mod);
+             break;
+         default :
+             System.out.println("elija una opcion válida");
+             continue;
         }
+    System.out.println("Deseas hacer otra operación 1.Si 2.No");
+     volver= teclado.nextInt();
+     if(volver==1){
+         continue;
+     }else{
+         System.out.println("adios");
+         continuar=false;
+     }
+        /*if(volver==1){
+            continue;
+        }else {
+            break;
+        }*/
+   } while(continuar);
     }
 }
 
