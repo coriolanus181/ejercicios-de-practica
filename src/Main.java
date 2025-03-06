@@ -6,122 +6,93 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
-      /*  Scanner teclado =new Scanner(System.in);
-        int num;
-        int min= 1;
-        int max =100;
-        Random ale = new Random();
-        int numAle = ale.nextInt(max - min + 1) + min;
-        System.out.println(numAle);
-            System.out.println("ingrese un número entre el uno y el 100");
-            num = teclado.nextInt();
+        Scanner teclado =new Scanner(System.in);
+        int mouse= 850000;
+        int tecl=230000;
+        int monitor=940000;
+        int disc=220000;
+        int usb=60000;
+        int opc;
+        int repetir;
+        boolean estado=true;
+        int totalcompra=0;
+        int totalbase=0;
+        int totalmouse=0;
+        int totalteclado=0;
+        int totalmonitor=0;
+        int totaldiscos=0;
+        int totalusb=0;
+        int imp;
+        int contM=0,contT=0,contMo=0,contD=0,contU=0;
+        String  nom,tel;
+        System.out.println("Bienvenidos a la tienda de tecnologia");
+        System.out.println("escriba su nombre");
+        nom= teclado.nextLine();
+        System.out.println("escriba su telefono");
+        tel= teclado.nextLine();
         do {
 
-                //System.out.println("--------Winner----------");
- if (numAle > num) {
-                System.out.println("El número es mayor que el ingresado ");
-                System.out.println("por favor ingrese nuevamente un numero");
-                num = teclado.nextInt();
 
-            } else if (num > numAle) {
-                System.out.println("El numero es menor que el ingresado");
-                System.out.println("por favor ingrese nuevamente un numero");
-                num = teclado.nextInt();
+            System.out.println("Qué desea comprar , elija sus productos : \n1.Mouse \n2.Teclado \n3.Monitor \n4.Disco Duro \n5.Usb");
+            opc = teclado.nextInt();
+
+            switch (opc) {
+                case 1:
+                    totalbase+=mouse;
+                    totalmouse+=mouse;
+                    contM++;
+                    break;
+                case 2:
+                    totalbase+=tecl;
+                    totalteclado+=tecl;
+                    contT++;
+                    break;
+                case 3:
+                    totalbase+=monitor;
+                    totalmonitor+=monitor;
+                    contMo++;
+                    break;
+                case 4:
+                    totalbase+=disc;
+                    totaldiscos+=disc;
+                    contD++;
+                    break;
+
+                case 5:
+                    totalbase+=usb;
+                    totalusb+=usb;
+                    contU++;
+                    break;
+
+                default:
+                    System.out.println("Elija una opción valida");
+                    continue;
             }
-        }while(num != numAle);
-        System.out.println("--------Winner----------");*/
 
-// numeros pares
-        /*
-        for(int i=1;i<101;i++){
-            if(i%2==0){
-                System.out.println(i+"\t El número es par ");
-            }else{
-                System.out.println(i+"\t El número es impar ");
-            }
+            System.out.println("1.¿ deseas seguir comprando? 1. Si  2. No ");
+            repetir = teclado.nextInt();
 
-        }*/
-
-
-        // número primo
-
-
-     /*   for (int i=1;i<=4;i++){
-            int cont=0;
-        for (int j = 1; j <= i; j++) {
-            if (i % j == 0) {
-                cont++;
-            }
-
-
-        }
-            if (cont > 2) {
-                System.out.println(i+"el numero no es primo");
+            if (repetir == 1) {
+                continue;
             } else {
-                System.out.println(i+"el número es primo");
+                estado=false;
+                System.out.println("--------------Factura electronica-----------------");
+                System.out.println("\tnombre cliente" + nom + "\ttelefono" + tel);
+                System.out.println("Producto \tCantidad\tvalor unitario\tvalor total");
+                System.out.println("Mouse\t\t " + contM + "\t\t\t" + mouse + "\t\t\t" + totalmouse);
+                System.out.println("Monitor\t\t " + contMo + "\t\t\t" + monitor + "\t\t\t" + totalmonitor);
+                System.out.println("Teclado\t\t " + contT + "\t\t\t" + tecl + "\t\t\t" + totalteclado);
+                System.out.println("Disco duro\t " + contD + "\t\t\t" + disc + "\t\t\t" + totaldiscos);
+                System.out.println("usb\t\t\t q" + contU + "\t\t\t" + usb + "\t\t\t" + totalusb);
+                        //System.out.println("el total de sus productos fueron"+cont);
+                System.out.println("el valor base de su compra es "+totalbase);
+                imp=totalbase*16/100;
+                System.out.println("el impuesto de la compra es "+imp);
+                totalcompra=totalbase+imp;
+                System.out.println("el total de su compra "+totalcompra);
+
             }
-
-
-        }*/
-        Scanner teclado =new Scanner(System.in);
-        int min=1;
-        int max=100;
-        int  opc = 0;
-        int sum,res,mul,mod,pot;
-        double div;
-        int volver;
-        boolean continuar=true;
-        Random ale =new Random();
-        int numAle1 = ale.nextInt(max - min + 1) + min;
-        int numAle2 = ale.nextInt(max - min + 1) + min;
-        System.out.println("primer número "+numAle1);
-        System.out.println("segundo número "+numAle2);
-do {
-        System.out.println("Elija la operación que desea hacer");
-        System.out.println("1.+ 2.- 3.x 4./ 5.^ 6.% ");
-        opc = teclado.nextInt();
-     switch (opc){
-         case 1 :
-                sum=numAle1+numAle2;
-                System.out.println("el resultado de la opración \t"+sum);
-            break;
-         case 2 : res=numAle1-numAle2;
-             System.out.println("el resultado de la opración \t"+res);
-            break;
-         case 3 :mul=numAle1*numAle2;
-             System.out.println("el resultado de la opración \t"+mul);
-            break;
-         case 4:
-            div=(double)numAle1/numAle2;
-             System.out.println("el resultado de la opración \t"+div);
-             break;
-         case 5:
-             pot= (int) Math.pow(numAle1,numAle2);
-             System.out.println("el resultado de la opración \t"+pot);
-             break;
-         case 6:
-            mod= numAle1&numAle2;
-             System.out.println("el resultado de la opración \t"+mod);
-             break;
-         default :
-             System.out.println("elija una opcion válida");
-             continue;
-        }
-    System.out.println("Deseas hacer otra operación 1.Si 2.No");
-     volver= teclado.nextInt();
-     if(volver==1){
-         continue;
-     }else{
-         System.out.println("adios");
-         continuar=false;
-     }
-        /*if(volver==1){
-            continue;
-        }else {
-            break;
-        }*/
-   } while(continuar);
+        }while(estado);
     }
 }
 
