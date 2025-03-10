@@ -6,93 +6,226 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner teclado =new Scanner(System.in);
-        int mouse= 850000;
-        int tecl=230000;
-        int monitor=940000;
-        int disc=220000;
-        int usb=60000;
+        Scanner teclado = new Scanner(System.in);
+
         int opc;
+        double gra;
+        double resultado;
+        boolean estado = true;
         int repetir;
-        boolean estado=true;
-        int totalcompra=0;
-        int totalbase=0;
-        int totalmouse=0;
-        int totalteclado=0;
-        int totalmonitor=0;
-        int totaldiscos=0;
-        int totalusb=0;
-        int imp;
-        int contM=0,contT=0,contMo=0,contD=0,contU=0;
-        String  nom,tel;
-        System.out.println("Bienvenidos a la tienda de tecnologia");
-        System.out.println("escriba su nombre");
-        nom= teclado.nextLine();
-        System.out.println("escriba su telefono");
-        tel= teclado.nextLine();
+
+
         do {
+            System.out.println("Menu de opciones");
+            System.out.println("1. Celsius a Fahrenheit");
 
+            System.out.println("2. Celsius a Kelvin");
+            System.out.println("3. Celsius a Rankine");
+            System.out.println("4. Celsius a Réaumur");
+            System.out.println("5. fahrenheit a Celsius");
+            System.out.println("6. Fahrenheit a Kelvin");
+            System.out.println("7.Fahrenheit a Rankine");
+            System.out.println("8.Fahrenheit a Réaumur");
+            System.out.println("9.Kelvin a Celsius");
+            System.out.println("10.Kelvin a Fahrenheit");
+            System.out.println("11.Kelvin a Rankine");
+            System.out.println("12.Kelvin a Réaumur");
+            System.out.println("13.Rankine a Celsius");
+            System.out.println("14.Rankine a Fahrenheit");
+            System.out.println("15. Rankine a Kelvin");
+            System.out.println("16.salir\n");
 
-            System.out.println("Qué desea comprar , elija sus productos : \n1.Mouse \n2.Teclado \n3.Monitor \n4.Disco Duro \n5.Usb");
+            System.out.println("Ingrese un valor positivo");
             opc = teclado.nextInt();
 
             switch (opc) {
                 case 1:
-                    totalbase+=mouse;
-                    totalmouse+=mouse;
-                    contM++;
+                    System.out.println("1. Celsius a Fahrenheit");
+
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra * 9 / 5) + 32;
+
+                        System.out.println("su resultado es" + resultado + "°F");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+
                     break;
                 case 2:
-                    totalbase+=tecl;
-                    totalteclado+=tecl;
-                    contT++;
+
+                    System.out.println("2. Celsius a Kelvin");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra + 273.15;
+                        System.out.println("su resultado es" + resultado + "°K");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
                     break;
                 case 3:
-                    totalbase+=monitor;
-                    totalmonitor+=monitor;
-                    contMo++;
+                    System.out.println("3. Celsius a Rankine");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra + 273.15) * 9 / 5;
+                        System.out.println("su resultado es" + resultado + "°R");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
                     break;
+
                 case 4:
-                    totalbase+=disc;
-                    totaldiscos+=disc;
-                    contD++;
-                    break;
-
+                    System.out.println("4. Celsius a Réaumur");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra * 4 / 5;
+                        System.out.println("su resultado es" + resultado + "°Re");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
                 case 5:
-                    totalbase+=usb;
-                    totalusb+=usb;
-                    contU++;
+                    System.out.println("5. fahrenheit a Celsius");
+
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 32) * 5 / 9;
+                        System.out.println("su resultado es" + resultado + "°C");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 6:
+                    System.out.println("6. Fahrenheit a Kelvin");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 32) * 5 / 9 + 273.15;
+                        System.out.println("su resultado es" + resultado + "K");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 7:
+                    System.out.println("7.Fahrenheit a Rankine");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra + 459.67;
+                        System.out.println("su resultado es" + resultado + "°R");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
                     break;
 
+                case 8:
+                    System.out.println("8.Fahrenheit a Réaumur");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 32) * 4 / 9;
+                        System.out.println("su resultado es" + resultado + "°Re");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 9:
+                    System.out.println("9.Kelvin a Celsius");
+
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra - 273.15;
+                        System.out.println("su resultado es" + resultado + "°C");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 10:
+                    System.out.println("10.Kelvin a Fahrenheit");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 273.15) * 9 / 5 + 32;
+                        System.out.println("su resultado es" + resultado + "K");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 11:
+                    System.out.println("11.Kelvin a Rankine");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra * 9 / 5;
+                        System.out.println("su resultado es" + resultado + "°R");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+
+                case 12:
+                    System.out.println("12.Kelvin a Réaumur");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 273.15) * 4 / 5;
+                        System.out.println("su resultado es" + resultado + "°Re");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 13:
+                    System.out.println("13.Rankine a Celsius");
+
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = (gra - 491.67) * 5 / 9;
+                        System.out.println("su resultado es" + resultado + "°C");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 14:
+                    System.out.println("14.Rankine a Fahrenheit");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra - 459.67;
+                        System.out.println("su resultado es" + resultado + "°F");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+                case 15:
+                    System.out.println("15. Rankine a Kelvin");
+                    System.out.println("Ingrese un valor valido");
+                    gra = teclado.nextInt();
+                    if(gra>0){
+                        resultado = gra * 5 / 9;
+                        System.out.println("su resultado es" + resultado + "°R");
+                    }else{
+                        System.out.println("elija una opcion valida");
+                    }
+                    break;
+
+                case 16:
+                    estado=false;
                 default:
-                    System.out.println("Elija una opción valida");
+                    System.out.println("elija una opción valida");
                     continue;
             }
 
-            System.out.println("1.¿ deseas seguir comprando? 1. Si  2. No ");
+            System.out.println("1.¿ desea volver al menu? 1. Si  2. No ");
             repetir = teclado.nextInt();
 
             if (repetir == 1) {
                 continue;
             } else {
                 estado=false;
-                System.out.println("--------------Factura electronica-----------------");
-                System.out.println("\tnombre cliente" + nom + "\ttelefono" + tel);
-                System.out.println("Producto \tCantidad\tvalor unitario\tvalor total");
-                System.out.println("Mouse\t\t " + contM + "\t\t\t" + mouse + "\t\t\t" + totalmouse);
-                System.out.println("Monitor\t\t " + contMo + "\t\t\t" + monitor + "\t\t\t" + totalmonitor);
-                System.out.println("Teclado\t\t " + contT + "\t\t\t" + tecl + "\t\t\t" + totalteclado);
-                System.out.println("Disco duro\t " + contD + "\t\t\t" + disc + "\t\t\t" + totaldiscos);
-                System.out.println("usb\t\t\t q" + contU + "\t\t\t" + usb + "\t\t\t" + totalusb);
-                        //System.out.println("el total de sus productos fueron"+cont);
-                System.out.println("el valor base de su compra es "+totalbase);
-                imp=totalbase*16/100;
-                System.out.println("el impuesto de la compra es "+imp);
-                totalcompra=totalbase+imp;
-                System.out.println("el total de su compra "+totalcompra);
-
             }
-        }while(estado);
+        } while (estado) ;
     }
 }
 
