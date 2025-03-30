@@ -1,5 +1,5 @@
 public class detallesA implements DetallesAnimal {
-    private int opcionAnimal;
+
     public int dibujoAnimal(int opcion){
         switch(opcion){
             case 1 -> System.out.println(" / \\__\n" +
@@ -18,13 +18,7 @@ public class detallesA implements DetallesAnimal {
         return opcion;
     }
 
-    @Override
-    public void dibujoAnimal() {
 
-    }
 
-    public void tipoAnimal(){
-        //animal.values();
 
-    }
 }
