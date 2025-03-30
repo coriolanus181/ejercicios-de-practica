@@ -1,46 +1,47 @@
-import java.sql.SQLOutput;
-import java.util.Random;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        boolean estado = true;
+        List<Animal> Domesticos = new ArrayList<>();
+        Animal chihuahua = new Perro(10, "cuadrupedo", 2, "macho", razas.chihuahua);
+        Animal gatoPersa = new Gato(8, "cuadrupedo", 2, "pelaje rizado");
+        detallesA dibujos = new detallesA();
+        Domesticos.add(chihuahua);
+        Domesticos.add(gatoPersa);
+        chihuahua.setEdad(chihuahua.edad + 10);
 
-        System.out.println("auto 1");
-        chevrolet();
-        System.out.println("\nauto 2");
-        Kia();
-    }
-    public static void  chevrolet(){
-        Autos chevroletX = new Autos();
-        chevroletX.setColor("rojo");
-        chevroletX.setKilometraje(1200);
-        chevroletX.setModelo("2012");
-        chevroletX.setMarca("chevrolet");
-        chevroletX.setPlaca("FGH523");
+        do {
+            System.out.println("Bienvenidos a PetShop");
+            System.out.println("elija su animal");
+            System.out.println("1. perro \n 2.gato \n3.salir");
+            int ani = teclado.nextInt();
 
-        System.out.println("marca :"+chevroletX.getMarca());
-        System.out.println("color : "+chevroletX.getColor());
-        System.out.println("Kilometraje :"+chevroletX.getKilometraje());
-        System.out.println("modelo :"+chevroletX.getModelo());
-        System.out.println("placa :"+chevroletX.getPlaca());
-    }
+            switch (ani) {
+                case 1 -> {
+                    System.out.println(Domesticos.getFirst());
+                    System.out.println(dibujos.dibujoAnimal(1));
+                }
+                case 2 -> {
 
-    public static void  Kia(){
-        Autos kiaX = new Autos();
-        kiaX.setColor("Blanco");
-        kiaX.setKilometraje(1350.5);
-        kiaX.setModelo("2013");
-        kiaX.setMarca("Renault");
-        kiaX.setMarca("GDF784");
+                    System.out.println(Domesticos.getLast());
+                    System.out.println(dibujos.dibujoAnimal(2));
+                }
+                case 3 -> estado = false;
+                default -> System.out.println("Elija una opcion valida");
+            }
+            ;
 
-        System.out.println("marca :"+kiaX.getMarca());
-        System.out.println("color : "+kiaX.getColor());
-        System.out.println("Kilometraje :"+kiaX.getKilometraje());
-        System.out.println("modelo :"+kiaX.getModelo());
-        System.out.println("placa :"+kiaX.getPlaca());
+        } while (estado);
     }
 }
+
+
+
 
 
