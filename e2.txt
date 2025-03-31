@@ -1,0 +1,100 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        List<LibroImpreso> impresos = new ArrayList<>();
+        List<LibroDigital> digitales = new ArrayList<>();
+        System.out.println("Bienvenido a la libreria ");
+        System.out.println("¿Qué libro desea ingresar ?");
+
+        LibroImpreso libro1 = new LibroImpreso("la divina comedia", "Dante",12.5,5);
+        
+    }
+}
+
+public class Libro {
+    protected String titulo;
+    protected String autor;
+    protected double precio;
+
+    public Libro(String titulo,String autor, double precio){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precio = precio;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void mostrarInfo(){
+        System.out.println("titulo"+titulo+", Autor : "+autor+", precio : "+precio);
+
+    }
+}
+public class LibroImpreso extends Libro{
+    private int peso;
+
+
+
+
+    public LibroImpreso(String titulo, String autor, double precio, int peso){
+        super(titulo,autor,precio);
+        this.peso= peso;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+    @Override
+    public void mostrarInfo(){
+        super.mostrarInfo();
+        System.out.println("peso: "+peso);
+    }
+}
+public class LibroDigital extends Libro {
+    private double tamano;
+
+    public LibroDigital(String titulo, String autor, double precio, double tamano) {
+        super(titulo, autor, precio);
+        this.tamano=tamano;
+    }
+
+    public double getTamano() {
+        return tamano;
+    }
+
+    public void setTamano(double tamano) {
+        this.tamano = tamano;
+    }
+
+    @Override
+    public void mostrarInfo(){
+        super.mostrarInfo();
+        System.out.println("tamaño :"+tamano);
+    }
+}
