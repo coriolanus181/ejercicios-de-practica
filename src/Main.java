@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,63 +10,78 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
 
-        int max = 3;
-        int min = 1;
-        int dinero;
-        int numAle;
-        int opc;
-        boolean estado=true;
+        List<LibroImpreso> impresos = new ArrayList<>();
+        List<LibroDigital> digitales = new ArrayList<>();
+        LibroImpreso libroI1= new LibroImpreso();
+        LibroImpreso libroI2 = new LibroImpreso();
+        LibroDigital libroD1 = new LibroDigital();
+        LibroDigital libroD2 = new LibroDigital();
+        impresos.add(libroI1);
+        impresos.add(libroI2);
+        digitales.add(libroD1);
+        digitales.add(libroD2);
+        String tituloL1,autorL1;
+        double precioL1;
+        int pesoL1 , repetir, nLibros ;
+        boolean estado = true;
+        System.out.println("Digite la cantidad de libros que desea ingresar");
+         nLibros = teclado.nextInt();
+     String[] titulosD = new String[nLibros];
+        System.out.println("Bienvenido a la libreria ");
+        System.out.println("¿Qué libro desea ingresar ?");
+        System.out.println("1 Impreso 2. Digital");
+        int opc = teclado.nextInt();
 
-        System.out.println("Ingrese su  Dinero");
-        dinero = teclado.nextInt();
-        do {
-            Random ale = new Random();
-            numAle = ale.nextInt(max - min + 1) + min;
-            System.out.println(numAle);
-
-            if (numAle == 1) {
-                System.out.println("Has ganado x2");
-                dinero *= 2;
-                System.out.println("tu dinero es\t"+dinero );
-                System.out.println("Deseas seguir jugando : 1.Si 2.No");
-                opc= teclado.nextInt();
-                if (opc==1){
-                    numAle = ale.nextInt(max - min + 1) + min;
-                    System.out.println(numAle);
-                    continue;
-
-                    //System.out.println("1. SI");
-                }else if(opc==2){
-                    estado=false;
-                    //System.out.println("2. NO");
-                    System.out.println("tu dinero es"+dinero);
+        switch (opc){
+            case 1 -> {
+                System.out.println("escriba el titulo");
+                for(int i=1;i<impresos.size();i++){
+                    System.out.println("digite el titulo del libro no"+i);
+                   // titulosD = teclado.tokens().toArray();
                 }
-            } else if (numAle == 2) {
-                System.out.println("pierdes la mitad");
-                dinero /= 2;
-                System.out.println("tu dinero es \t"+dinero );
-                System.out.println("Deseas seguir jugando : 1.Si 2.No");
+                tituloL1 =teclado.nextLine();
+               System.out.println("escriba el autor");
+                autorL1 = teclado.nextLine();
+                System.out.println("escriba el precio");
+                precioL1 = teclado.nextDouble();
+                System.out.println("escriba el peso");
+                pesoL1 = teclado.nextInt();
 
-                opc= teclado.nextInt();
-                if (opc==1){
-                    numAle = ale.nextInt(max - min + 1) + min;
-                    System.out.println(numAle);
-                    continue;
+                libroI1.setTitulo(tituloL1);
+                libroI1.setAutor(autorL1);
+                libroI1.setPrecio(precioL1);
+                libroI1.setPeso(pesoL1);
+              //  libroI1.mostrarInfo();
 
-                    //System.out.println("1. SI");
-                }else if(opc==2){
-                    estado=false;
-                    //System.out.println("2. NO");
-                    System.out.println("tu dinero es\t"+dinero);
+                System.out.println("Libros impresos :");
+                for(LibroImpreso D : impresos){
+                  D.mostrarInfo();
                 }
-            } else if (numAle == 3) {
-                System.out.println("pierdes todo");
-                dinero -= dinero;
-                estado= false;
             }
+            case 2 -> {
+                System.out.println("escriba el titulo");
+                tituloL1 =teclado.nextLine();
+                System.out.println("escriba el autor");
+                autorL1 = teclado.nextLine();
+                System.out.println("escriba el precio");
+                precioL1 = teclado.nextDouble();
+                System.out.println("escriba el peso");
+                pesoL1 = teclado.nextInt();
+                libroI1.setTitulo(tituloL1);
+                libroI1.setAutor(autorL1);
+                libroI1.setPrecio(precioL1);
+                libroI1.setPeso(pesoL1);
+                libroI1.mostrarInfo();
+            }
+            default -> System.out.println("elija una opcion valida");
+        };
+        /*System.out.println("Desea ingresar  otro libro : 1. Si 2. No");
+        repetir = teclado.nextInt();
+        if (repetir==1) {
+            continue;
+        } else {
 
-        } while (estado);
-
+        }*/
 
 
     }
