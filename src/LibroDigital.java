@@ -5,10 +5,10 @@ public class LibroDigital extends Libro {
 
     }
 
-   /* public LibroDigital(String titulo, String autor, double precio, double tamano) {
+   public LibroDigital(String titulo, String autor, double precio, double tamano) {
         super(titulo, autor, precio);
         this.tamano=tamano;
-    }*/
+    }
 
     public double getTamano() {
         return tamano;
@@ -20,7 +20,8 @@ public class LibroDigital extends Libro {
 
     @Override
     public void mostrarInfo(){
+        System.out.println("\nLibros Digitales :");
         super.mostrarInfo();
-        System.out.println("tamaño :"+tamano);
+        System.out.println("\ttamaño :"+tamano);
     }
 }

@@ -4,11 +4,11 @@ public class LibroImpreso extends Libro{
     public LibroImpreso() {
     }
 
-    /*
+
     public LibroImpreso(String titulo, String autor, double precio, int peso){
         super(titulo,autor,precio);
         this.peso= peso;
-    }*/
+    }
 
     public int getPeso() {
         return peso;
@@ -20,7 +20,7 @@ public class LibroImpreso extends Libro{
     @Override
     public void mostrarInfo(){
         super.mostrarInfo();
-        System.out.println("peso: "+peso);
+        System.out.print("\tpeso: "+peso+"\n");
     }
 }
 

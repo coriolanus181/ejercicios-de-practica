@@ -7,11 +7,11 @@ public class Libro {
 
     }
 
-    /*public Libro(String titulo,String autor, double precio){
-            this.titulo = titulo;
-            this.autor = autor;
-            this.precio = precio;
-    */
+    public Libro(String titulo,String autor, double precio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precio = precio;
+    }
     public String getTitulo() {
         return titulo;
     }
@@ -37,7 +37,7 @@ public class Libro {
     }
 
     public void mostrarInfo(){
-        System.out.println("titulo"+titulo+", Autor : "+autor+", precio : "+precio);
+        System.out.print("titulo :"+titulo+", Autor : "+autor+", precio : "+precio);
 
     }
 }
