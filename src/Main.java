@@ -6,10 +6,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
+//EmpleadoPlata carlos = new EmpleadoPlanta(55,"carlos",210000);
 
     }
-
 }
+
+
 
 
