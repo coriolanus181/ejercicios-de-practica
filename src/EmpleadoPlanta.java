@@ -1,9 +1,9 @@
 public class EmpleadoPlanta extends Empleado {
-    private double salarioFijo;
+    private double salarioFijo =2100000;
 
-    public EmpleadoPlanta(int edad, String nombre, double salarioFijo) {
-        super(edad, nombre);
-        this.salarioFijo = salarioFijo;
+    public EmpleadoPlanta(int edad, String nombre) {
+        super(nombre, edad);
+
     }
 
     public double getSalarioFijo() {

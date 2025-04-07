@@ -1,11 +1,13 @@
 public class EmpleadoHoras extends Empleado {
-    private double pagoHoras;
+    private double pagoHora = 98000 ;
+    private double salario;
     private int horasTrabajadas;
 
-    public EmpleadoHoras(int edad, String nombre, int horasTrabajadas, double pagoHoras) {
-        super(edad, nombre);
+    public EmpleadoHoras(int edad, String nombre, int horasTrabajadas) {
+        super(nombre, edad);
         this.horasTrabajadas = horasTrabajadas;
-        this.pagoHoras = pagoHoras;
+        this.salario =horasTrabajadas*pagoHora;
+
     }
 
     public int getHorasTrabajadas() {
@@ -16,17 +18,18 @@ public class EmpleadoHoras extends Empleado {
         this.horasTrabajadas = horasTrabajadas;
     }
 
-    public double getPagoHoras() {
-        return pagoHoras;
+public void setSalarioHoras(){
+
+}
+
+    public double getPagoHora() {
+        return salario;
     }
 
-    public void setPagoHoras(double pagoHoras) {
-        this.pagoHoras = pagoHoras;
-    }
 
     @Override
     public void mostrarInformacion() {
         super.mostrarInformacion();
-        System.out.println("Pago Horas : "+pagoHoras+"Horas trabajadas: "+horasTrabajadas);
+        System.out.println("Horas trabajadas: "+horasTrabajadas+"\nsalario : "+getPagoHora());
     }
 }
