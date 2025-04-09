@@ -29,8 +29,11 @@ do {
     System.out.println("Bienvenidos a las votaciones");
     System.out.println("votar por candidato");
     System.out.println("calcular costo de campaña");
-    System.out.println();
+    System.out.println("vaciar todas las urnas de votación");
+    System.out.println("conocer el numero total de votos");
+    System.out.println("Porcentaje de votos obtenidos por cada candidato. ");
     System.out.println("Elija cuál es el candidato a votar:");
+    System.out.println("Costo promedio de campaña en las elecciones.");
     System.out.println("1. Marco Tulio Sanchez");
     System.out.println("2. Wilson García");
     System.out.println("3. Fabian Rojas");
