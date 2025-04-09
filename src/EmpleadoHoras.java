@@ -1,12 +1,12 @@
 public class EmpleadoHoras extends Empleado {
     private double pagoHora = 98000 ;
-    private double salario;
+   // private double salario;
     private int horasTrabajadas;
 
     public EmpleadoHoras(int edad, String nombre, int horasTrabajadas) {
         super(nombre, edad);
         this.horasTrabajadas = horasTrabajadas;
-        this.salario =horasTrabajadas*pagoHora;
+        //this.salario =horasTrabajadas*pagoHora;
 
     }
 
@@ -18,12 +18,9 @@ public class EmpleadoHoras extends Empleado {
         this.horasTrabajadas = horasTrabajadas;
     }
 
-public void setSalarioHoras(){
-
-}
 
     public double getPagoHora() {
-        return salario;
+        return  pagoHora *= horasTrabajadas;
     }
 
 
