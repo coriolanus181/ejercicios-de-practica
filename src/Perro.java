@@ -5,6 +5,9 @@ public class Perro {
     private int edad;
     private String tamano;
 
+    public Perro() {
+    }
+
     public Perro(String placa, String nombre, String raza, int edad, String tamano) {
         this.placa = placa;
         this.nombre = nombre;
