@@ -1,4 +1,5 @@
 public class Perro {
+
     private String placa;
     private String nombre;
     private String raza;
@@ -6,6 +7,7 @@ public class Perro {
     private String tamano;
 
     public Perro() {
+
     }
 
     public Perro(String placa, String nombre, String raza, int edad, String tamano) {
