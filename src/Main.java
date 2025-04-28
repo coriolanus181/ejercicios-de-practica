@@ -11,110 +11,132 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
         boolean estado = true;
-        Candidato candidado1 = new Candidato("Gustavo Petro");
-        Candidato candidado2 = new Candidato("Alvaro Uribe");
-        Candidato candidato3 = new Candidato("Joan Chindoy");
-        int opc,voto,medio;
-        double contador1 = 0,contador2=0,contador3=0,contadorT=0;
-
-        int repetir;
+        int opc;
+        List<Usuario> usuarios= new ArrayList<>() ;
+        List<Libro> libros = new ArrayList<>();
+        String documento,nombre,autor,nombreL;
         do {
-            System.out.println("Bienvenidos a las elecciones Premier");
-            System.out.println("menu");
-            System.out.println("1. Votar por el candidato de su elección ");
-            System.out.println("2. calcular costo de la campaña");
-            System.out.println("3. vaciar todas las urnas de votación");
-            System.out.println("4. conocer el número total de votos");
-            System.out.println("5. Porcentaje de votos obtenidos por cada candidado");
-            System.out.println("6. Costo promedio  de  campaña de las elecciones");
-            System.out.println("7. salir");
+
+
+            System.out.println("Bienvenidos a la biblicoteca");
+            System.out.println("1.registrar usuario");
+            System.out.println("2. registrar libros");
+            System.out.println("3. alquilar libros");
+            System.out.println("4. devolver libros");
+            System.out.println("5. mostrar listado de libros y usuarios");
+            System.out.println("6. salir");
+            System.out.println("ingrese una opcion");
             opc = teclado.nextInt();
+
             switch (opc) {
                 case 1 -> {
-                    System.out.println("Por qué candidato va votar");
-                    System.out.println("1. Petro 2.Uribe 3.Chindoy");
-                    voto = teclado.nextInt();
-                    if (voto == 1) {
-                        // System.out.println("Votaste por Petro");
+                    teclado.nextLine();
+                    System.out.print("Ingrese un nombre");
+                    nombre = teclado.nextLine();
+                    System.out.println("Ingrese un Documento");
+                    documento = teclado.nextLine();
 
-                        System.out.println("¿cuál fue el medio que lo influencio? 1.internet 2. radio 3.televisión");
-                        medio = teclado.nextInt();
-                        candidado1.influencia(medio);
-                        candidado1.valorPublicidad(medio);
-                        System.out.println("su eleccion fue :");
-                        System.out.println(candidado1);
-                        /*System.out.println("volver al menu");
-                        repetir= teclado.nextInt();
-                        if (repetir==1){
-                            continue;
-                        }else {
-                            estado= false;
-                        }*/
-                        contador1++;
-                        contadorT++;
-
-                    } else if (voto == 2) {
-                        System.out.println("¿cuál fue el medio que lo influencio? 1.internet 2. radio 3.televisión");
-                        medio = teclado.nextInt();
-                        candidado2.influencia(medio);
-                        candidado2.valorPublicidad(medio);
-                        System.out.println("su eleccion fue :");
-                        System.out.println(candidado2);
-                        contador2++;
-                        contadorT++;
-                    } else if (voto == 3) {
-                        System.out.println("¿cuál fue el medio que lo influencio? 1.internet 2. radio 3.televisión");
-                        medio = teclado.nextInt();
-                        candidato3.influencia(medio);
-                        candidato3.valorPublicidad(medio);
-                        System.out.println("su eleccion fue :");
-                        System.out.println(candidato3);
-                        contador3++;
-                        contadorT++;
+                    usuarios.add(new Usuario(documento, nombre));
+                    for (Usuario o : usuarios) {
+                        System.out.println(o);
                     }
                 }
-                case 2 -> {
-                    System.out.println("el costo de la campaña fue de");
+                case 2 ->{
+                    teclado.nextLine();
+                    System.out.print("Ingrese el nombre del libro");
+                    nombreL= teclado.nextLine();
+                    System.out.println("Ingresa el autor");
+                    autor= teclado.nextLine();
 
-                    candidado1.mostrarValorCampana();
-                    candidado2.mostrarValorCampana();
-                    candidato3.mostrarValorCampana();
+
+                    libros.add(new Libro(autor,nombreL));
+                    for(Libro l: libros){
+                        System.out.println(l);
+                    }
                 }
+
                 case 3 ->{
-                    contador1 =0;
-                    contador2 =0;
-                    contador3 =0;
-                    contadorT =0;
-                    candidado1.getVaciarUrna();
-                    candidado2.getVaciarUrna();
-                    candidato3.getVaciarUrna();
+                    teclado.nextLine();
+                    System.out.print("¿qué libro desea alquilar? ingrese el nombre");
+                    String libroA= teclado.nextLine();
+                    System.out.println("ingrese el documento de la persona que desea alguilar");
+                    String documentoA = teclado.nextLine();
+
+                    boolean estadoal = true;
+
+                    for(Libro l: libros) {
+                        if (l.getNombre().equals(libroA)) {
+
+                            for (Usuario u : usuarios) {
+                                if (u.getDocumento().equals(documentoA)) {
+                                    u.alquilarLibro(l);
+                                    libros.remove(l);
+                                    break;
+
+
+                                } else {
+                                    System.out.println("usuario no registrado");
+                                }
+
+                            }
+
+
+                        } else {
+                            System.out.println("libro no encontrado");
+                        }
+
+                    }
                 }
+
                 case 4 ->{
-                    System.out.println("el numero de votos fue");
-                    System.out.println("candidato 1 :"+contador1);
-                    System.out.println("candidato 2 :"+contador2);
-                    System.out.println("candidato 3 :"+contador3);
-                    System.out.println("Total votos :"+contadorT);
+                    teclado.nextLine();
+                    System.out.print("¿Qué libro desea devolver? Ingrese el nombre: ");
+                    String libroD = teclado.nextLine();
+                    System.out.println("Ingrese el documento de la persona:");
+                    String documentoA = teclado.nextLine();
+
+                    boolean encontrado = false;
+
+                    for (Usuario u : usuarios) {
+                        if (u.getDocumento().equals(documentoA)) {
+                            for (Libro libro : u.getLibros()) {
+                                if (libro.getNombre().equals(libroD)) {
+                                    u.devolverLibro(libro);
+                                    libros.add(libro); // regresa a la lista de disponibles
+                                    System.out.println("Libro devuelto correctamente.");
+                                    encontrado = true;
+                                    break;
+                                }
+                            }
+                            if (!encontrado) {
+                                System.out.println("El usuario no tiene ese libro alquilado.");
+                            }
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("Usuario no encontrado o libro no alquilado.");
+                    }
                 }
 
                 case 5 ->{
+                    System.out.println("********Libros Disponibles************");
+                    for(Libro l:libros){
+                        System.out.println(l);
+                    }
 
-                    System.out.println("candidato 1 :"+((contador1/contadorT)*100)+"%"+"\ncandidato 2 :"+((contador2/contadorT)*100)+"%"+"\ncandidato 3 :"+((contador3/contadorT)*100)+"%");
+                    System.out.println("**************Usuarios*************");
+                    for(Usuario u:usuarios){
+                        System.out.println(u);
+                    }
                 }
-                case 6 -> {
 
-                    candidado1.mostrarPromedio();
-                    candidado2.mostrarPromedio();
-                    candidato3.mostrarPromedio();
-                }
+                case 6  -> estado=false;
 
-                case 7  -> estado = false;
 
-                default -> System.out.println("Elija una opción valida");
-
+                default -> System.out.println("Elija una opcion valida");
 
             }
-            ;
         }while(estado);
     }
 }
